@@ -1,10 +1,7 @@
 package com.example.userapi.domain.model;
 
 import com.example.userapi.domain.SignUpForm;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import org.hibernate.envers.AuditOverride;
 
 import javax.persistence.*;
@@ -14,6 +11,7 @@ import java.util.Locale;
 
 @Entity
 @Getter
+@Setter
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
@@ -21,7 +19,6 @@ import java.util.Locale;
 public class Customer extends BaseEntity {
 
     @Id
-    @Column(name = "id", nullable = false)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
@@ -35,7 +32,7 @@ public class Customer extends BaseEntity {
 
     private LocalDateTime verifyExpiredAt;
     private String verificationCode;
-    private boolean verify = false;
+    private boolean verify;
 
     public static Customer from(SignUpForm form) {
         return Customer.builder()

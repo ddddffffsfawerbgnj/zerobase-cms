@@ -12,6 +12,6 @@ public class FeignConfig {
     @Bean
     public BasicAuthenticationInterceptor basicAuthenticationInterceptor(){
         return new BasicAuthenticationInterceptor("api",
-                "410e6b54f25a807ec7896b1c22c9aa91-30344472-310b7702");
+                "key-96fbdef8191e2fc5848f052686c761a6");
     }
 }
